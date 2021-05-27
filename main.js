@@ -1,4 +1,4 @@
-var canvas = new fabric.canvas('myCanvas');
+var canvas = new fabric.canvas('myCanvas')
 
 avenger_x = 10;
 avenger_y = 10;
@@ -21,7 +21,8 @@ function avenger_update()
         top:avenger_y,
         left:avenger_x
         } );
-        canvas.add(player_object);
+
+        canvas.add(avenger_object);
     }  
     );
 }
@@ -138,3 +139,52 @@ if(ascci=='82')
 
 }
 
+
+function Up()
+{
+    if(avenger_y >= 0 )
+        { 
+            avenger_y = avenger_y - block_image_height;
+            console.log("block image height = " + block_image_height);
+            console.log("When up arrow key is pressed, X = " + avenger_x + " , Y = " + avenger_y);
+            canvas.remove(avenger_object);
+            player_update();
+            }
+
+}
+
+function down()
+{
+    if(avenger_y <= 600 )
+        { 
+            avenger_y = avenger_y + block_image_height;
+            console.log("block image height = " + block_image_height);
+            console.log("When up arrow key is pressed, X = " + avenger_x + " , Y = " + avenger_y);
+            canvas.remove(avenger_object);
+            player_update();
+            }
+}
+
+function right()
+{
+    if(player_x <= 1000 )
+        { 
+            avenger_x = avenger_x + block_image_height;
+            console.log("block image height = " + block_image_height);
+            console.log("When up arrow key is pressed, X = " + avenger_x + " , Y = " + avenger_y);
+            canvas.remove(avenger_object);
+            player_update();
+            }
+}
+
+function left()
+{
+    if(player_x >= 0 )
+        { 
+            avenger_x= avenger_x - block_image_height;
+            console.log("block image height = " + block_image_height);
+            console.log("When up arrow key is pressed, X = " + avenger_x + " , Y = " + avenger_y);
+            canvas.remove(avenger_object);
+            player_update();
+            }
+}
